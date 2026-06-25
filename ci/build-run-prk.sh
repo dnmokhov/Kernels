@@ -479,7 +479,8 @@ case "$PRK_TARGET" in
                 export LD_LIBRARY_PATH=${TBBROOT}/lib:${LD_LIBRARY_PATH}
                 ;;
         esac
-        ${MAKE} -C $PRK_TARGET_PATH p2p-innerloop-tbb p2p-hyperplane-tbb p2p-tasks-tbb stencil-tbb transpose-tbb nstream-tbb
+        ${MAKE} -C $PRK_TARGET_PATH dgemm-tbb p2p-innerloop-tbb p2p-hyperplane-tbb p2p-tasks-tbb stencil-tbb transpose-tbb nstream-tbb
+        $PRK_TARGET_PATH/dgemm-tbb             10 5000
         $PRK_TARGET_PATH/p2p-innerloop-tbb     10 1024
         $PRK_TARGET_PATH/p2p-hyperplane-tbb    10 1024 1
         $PRK_TARGET_PATH/p2p-hyperplane-tbb    10 1024 32

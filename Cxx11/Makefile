@@ -1,4 +1,4 @@
-include ../common/make.defs
+include ../common/make.defs.oneapi
 
 # debugging
 ifdef VERBOSE
@@ -98,7 +98,7 @@ sycl: nstream-sycl nstream-sycl-explicit p2p-hyperplane-sycl stencil-sycl transp
 
 dpcpp: sycl nstream-dpcpp nstream-multigpu-dpcpp transpose-dpcpp
 
-tbb: p2p-innerloop-tbb p2p-tbb stencil-tbb transpose-tbb nstream-tbb \
+tbb: dgemm-tbb p2p-innerloop-tbb p2p-tbb stencil-tbb transpose-tbb nstream-tbb \
      p2p-hyperplane-tbb p2p-tasks-tbb
 
 stl: stencil-stl transpose-stl nstream-stl

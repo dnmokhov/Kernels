@@ -32,6 +32,8 @@
 #ifndef PRK_TBB_H
 #define PRK_TBB_H
 
+#define TBB_PREVIEW_NUMA_ALLOCATION 1
+
 //#include <tbb/tbb.h>
 #include <tbb/version.h>
 #include <tbb/global_control.h>
@@ -43,6 +45,9 @@
 #include <tbb/parallel_for_each.h>
 #if TBB_INTERFACE_VERSION <= 12000
 #   include <tbb/parallel_do.h>
+#endif
+#if TBB_HAS_NUMA_ALLOCATION
+#   include <tbb/numa_allocation.h>
 #endif
 
 #if ( PRK_TBB_PARTITIONER == 1)

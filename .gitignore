@@ -148,6 +148,7 @@ Cxx11/dgemm-openmp
 Cxx11/dgemm-raja
 Cxx11/dgemm-stdpar
 Cxx11/dgemm-sycl
+Cxx11/dgemm-tbb
 Cxx11/dgemm-vector
 Cxx11/dgemm-vector-raja
 Cxx11/sgemm-cublas
