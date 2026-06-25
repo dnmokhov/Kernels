@@ -146,9 +146,8 @@ int main(int argc, char * argv[])
     if (iter == 1)
       dgemm_time = prk::wtime();
 
-    // IKJ loop order should keep the innermost j loop unit-stride and SIMD vectorizable.
     tbb::parallel_for(
-        tbb::blocked_range2d<int>(0, order, 0, order),
+        tbb::blocked_range2d<int>(0, order, 64, 0, order, 32),
         [&](const tbb::blocked_range2d<int> &r) {
           const int ibegin = r.rows().begin();
           const int iend = r.rows().end();
